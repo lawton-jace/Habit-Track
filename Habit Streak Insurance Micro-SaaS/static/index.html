@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Habit Streak Insurance</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="app">
+        <!-- Auth Section -->
+        <div id="auth-section" class="section">
+            <div class="auth-container">
+                <h1 class="logo">Habit Streak Insurance</h1>
+                <p class="tagline">Miss a day. Fund your enemy.</p>
+
+                <div class="auth-tabs">
+                    <button class="tab-btn active" data-tab="login">Login</button>
+                    <button class="tab-btn" data-tab="register">Register</button>
+                </div>
+
+                <form id="login-form" class="auth-form">
+                    <input type="email" id="login-email" placeholder="Email" required>
+                    <input type="password" id="login-password" placeholder="Password" required>
+                    <button type="submit" class="btn btn-primary">Login</button>
+                    <p class="error-message" id="login-error"></p>
+                </form>
+
+                <form id="register-form" class="auth-form hidden">
+                    <input type="email" id="register-email" placeholder="Email" required>
+                    <input type="password" id="register-password" placeholder="Password" required>
+                    <button type="submit" class="btn btn-primary">Create Account</button>
+                    <p class="error-message" id="register-error"></p>
+                </form>
+            </div>
+        </div>
+
+        <!-- Dashboard Section -->
+        <div id="dashboard-section" class="section hidden">
+            <header class="header">
+                <h1>Habit Streak Insurance</h1>
+                <div class="header-right">
+                    <span id="user-email"></span>
+                    <button id="logout-btn" class="btn btn-secondary">Logout</button>
+                </div>
+            </header>
+
+            <!-- Stats Cards -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-value" id="stat-habits">0</div>
+                    <div class="stat-label">Active Habits</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value" id="stat-streak">0</div>
+                    <div class="stat-label">Best Streak</div>
+                </div>
+                <div class="stat-card danger">
+                    <div class="stat-value">$<span id="stat-at-risk">0.00</span></div>
+                    <div class="stat-label">At Risk Today</div>
+                </div>
+                <div class="stat-card warning">
+                    <div class="stat-value">$<span id="stat-donated">0.00</span></div>
+                    <div class="stat-label">Total "Donated"</div>
+                </div>
+            </div>
+
+            <!-- Habits Section -->
+            <div class="habits-section">
+                <div class="section-header">
+                    <h2>Your Habits</h2>
+                    <button id="add-habit-btn" class="btn btn-primary">+ Add Habit</button>
+                </div>
+
+                <div id="habits-list" class="habits-list">
+                    <!-- Habits will be rendered here -->
+                </div>
+            </div>
+
+            <!-- Recent Donations / Shame Wall -->
+            <div class="donations-section">
+                <h2>Shame Wall</h2>
+                <p class="section-subtitle">Every missed day lives here forever.</p>
+                <div id="donations-list" class="donations-list">
+                    <!-- Donations will be rendered here -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Add Habit Modal -->
+        <div id="habit-modal" class="modal hidden">
+            <div class="modal-content">
+                <h2>Create New Habit</h2>
+                <form id="habit-form">
+                    <div class="form-group">
+                        <label for="habit-name">Habit Name</label>
+                        <input type="text" id="habit-name" placeholder="e.g., Morning Run, Cold Shower, Journal" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="habit-description">Description (optional)</label>
+                        <input type="text" id="habit-description" placeholder="Why this habit matters to you">
+                    </div>
+                    <div class="form-group">
+                        <label for="habit-category">Category</label>
+                        <select id="habit-category">
+                            <option value="">Select a category...</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="habit-stake">Weekly Stake ($)</label>
+                        <input type="number" id="habit-stake" min="1" max="100" step="0.01" value="5.00" required>
+                        <small>Amount at risk per week if you miss days</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="habit-anti-charity">Anti-Charity</label>
+                        <select id="habit-anti-charity" required>
+                            <option value="">Select an organization you despise...</option>
+                        </select>
+                        <small>Your money goes here when you fail</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="habit-notification">Reminder Notifications</label>
+                        <select id="habit-notification">
+                            <option value="multiple_daily">Multiple times daily</option>
+                            <option value="daily" selected>Once daily</option>
+                            <option value="weekly">Weekly summary</option>
+                            <option value="off">Off</option>
+                        </select>
+                        <small>How often should we remind you about this habit?</small>
+                    </div>
+                    <div class="modal-actions">
+                        <button type="button" class="btn btn-secondary" id="cancel-habit-btn">Cancel</button>
+                        <button type="submit" class="btn btn-primary">Create Habit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Delete Confirmation Modal -->
+        <div id="delete-modal" class="modal hidden">
+            <div class="modal-content" style="max-width: 400px;">
+                <h2>Delete Habit?</h2>
+                <p id="delete-modal-message" style="color: var(--text-secondary); margin-bottom: 24px;">
+                    Are you sure you want to delete this habit? This action cannot be undone.
+                </p>
+                <div class="modal-actions">
+                    <button type="button" class="btn btn-secondary" id="cancel-delete-btn">Cancel</button>
+                    <button type="button" class="btn btn-danger" id="confirm-delete-btn">Delete</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

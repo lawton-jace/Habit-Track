@@ -1,0 +1,593 @@
+/* =============================================================================
+   LANDING PAGE STYLES
+   ============================================================================= */
+
+.landing-body {
+    background: linear-gradient(180deg, var(--bg-dark) 0%, #111114 100%);
+}
+
+.landing-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* =============================================================================
+   NAVIGATION
+   ============================================================================= */
+
+.landing-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 0;
+}
+
+.landing-nav .logo {
+    font-size: 1.5rem;
+    margin: 0;
+    text-align: left;
+}
+
+/* =============================================================================
+   HERO SECTION
+   ============================================================================= */
+
+.hero {
+    padding: 0 32px;
+    min-height: 90vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.hero-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 60px 0;
+}
+
+.hero-headline {
+    font-size: 3rem;
+    line-height: 1.2;
+    margin-bottom: 24px;
+    background: linear-gradient(135deg, var(--text-primary) 0%, var(--accent-red) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.hero-subtext {
+    font-size: 1.25rem;
+    color: var(--text-secondary);
+    margin-bottom: 40px;
+    line-height: 1.8;
+}
+
+.btn-large {
+    padding: 18px 36px;
+    font-size: 1.1rem;
+    display: inline-block;
+    width: fit-content;
+    margin: 0 auto;
+}
+
+/* =============================================================================
+   SECTION STYLING
+   ============================================================================= */
+
+section {
+    padding: 80px 32px;
+}
+
+section h2 {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 48px;
+}
+
+/* =============================================================================
+   PROBLEM SECTION
+   ============================================================================= */
+
+.problem-section {
+    background: var(--bg-card);
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.problem-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 32px;
+}
+
+.problem-card {
+    background: var(--bg-dark);
+    border-radius: 16px;
+    padding: 32px;
+    border: 1px solid var(--border-color);
+    text-align: center;
+    transition: transform 0.2s, border-color 0.2s;
+}
+
+.problem-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--accent-red);
+}
+
+.problem-icon {
+    font-size: 3rem;
+    margin-bottom: 16px;
+}
+
+.problem-card h3 {
+    font-size: 1.25rem;
+    margin-bottom: 12px;
+    color: var(--accent-red);
+}
+
+.problem-card p {
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+/* =============================================================================
+   SOLUTION SECTION
+   ============================================================================= */
+
+.solution-content {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.solution-hook {
+    font-size: 1.5rem;
+    text-align: center;
+    margin-bottom: 32px;
+    line-height: 1.6;
+}
+
+.solution-hook em {
+    color: var(--accent-red);
+    font-style: normal;
+    font-weight: 700;
+}
+
+.solution-list {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 32px;
+}
+
+.solution-list li {
+    padding: 16px 0;
+    padding-left: 32px;
+    position: relative;
+    font-size: 1.1rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.solution-list li:last-child {
+    border-bottom: none;
+}
+
+.solution-list li::before {
+    content: ">";
+    position: absolute;
+    left: 0;
+    color: var(--accent-red);
+    font-weight: bold;
+}
+
+.solution-list li em {
+    color: var(--accent-yellow);
+}
+
+.solution-result {
+    text-align: center;
+    font-size: 1.25rem;
+    color: var(--accent-green);
+    font-weight: 600;
+}
+
+/* =============================================================================
+   ISUS SECTION
+   ============================================================================= */
+
+.isus-section {
+    background: linear-gradient(135deg, var(--bg-dark) 0%, #1a0a0a 100%);
+}
+
+.isus-card {
+    max-width: 700px;
+    margin: 0 auto;
+    background: var(--bg-card);
+    border-radius: 20px;
+    padding: 48px;
+    border: 2px solid var(--accent-red);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.isus-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--accent-red), var(--accent-yellow), var(--accent-red));
+}
+
+.isus-badge {
+    display: inline-block;
+    background: var(--accent-red);
+    color: white;
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 24px;
+}
+
+.isus-card h2 {
+    font-size: 3rem;
+    margin-bottom: 8px;
+    letter-spacing: 4px;
+}
+
+.isus-card h3 {
+    font-size: 1.25rem;
+    color: var(--text-secondary);
+    font-weight: 400;
+    margin-bottom: 24px;
+}
+
+.isus-description {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 16px;
+}
+
+.isus-motto {
+    font-size: 1.5rem;
+    font-style: italic;
+    color: var(--accent-yellow);
+    margin-bottom: 32px;
+}
+
+.isus-stats {
+    display: flex;
+    justify-content: center;
+    gap: 48px;
+    margin-bottom: 32px;
+    padding: 24px 0;
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.isus-stat {
+    display: flex;
+    flex-direction: column;
+}
+
+.isus-stat .stat-number {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--accent-red);
+}
+
+.isus-stat .stat-label {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-top: 4px;
+}
+
+.isus-cta {
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+/* =============================================================================
+   PIPELINE SECTION
+   ============================================================================= */
+
+.pipeline-section {
+    background: var(--bg-card);
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.pipeline-steps {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.pipeline-step {
+    background: var(--bg-dark);
+    border-radius: 16px;
+    padding: 32px 24px;
+    border: 1px solid var(--border-color);
+    text-align: center;
+    max-width: 220px;
+    flex: 1;
+    min-width: 200px;
+}
+
+.step-number {
+    width: 48px;
+    height: 48px;
+    background: var(--accent-red);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0 auto 16px;
+}
+
+.pipeline-step h3 {
+    font-size: 1.1rem;
+    margin-bottom: 12px;
+}
+
+.pipeline-step p {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+.pipeline-arrow {
+    font-size: 2rem;
+    color: var(--accent-red);
+    display: flex;
+    align-items: center;
+    padding-top: 60px;
+}
+
+/* =============================================================================
+   OBJECTIONS SECTION
+   ============================================================================= */
+
+.objections-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.objection {
+    background: var(--bg-card);
+    border-radius: 12px;
+    padding: 24px;
+    border: 1px solid var(--border-color);
+}
+
+.objection h4 {
+    color: var(--accent-yellow);
+    font-size: 1rem;
+    margin-bottom: 12px;
+    font-style: italic;
+}
+
+.objection p {
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+/* =============================================================================
+   PRICING SECTION
+   ============================================================================= */
+
+.pricing-section {
+    background: var(--bg-card);
+    border-top: 1px solid var(--border-color);
+}
+
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.price-card {
+    background: var(--bg-dark);
+    border-radius: 16px;
+    padding: 32px;
+    border: 1px solid var(--border-color);
+    text-align: center;
+    position: relative;
+}
+
+.price-card.featured {
+    border-color: var(--accent-red);
+    transform: scale(1.05);
+}
+
+.featured-badge {
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--accent-red);
+    color: white;
+    padding: 6px 20px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.price-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 16px;
+}
+
+.price {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.price span {
+    font-size: 1rem;
+    color: var(--text-muted);
+}
+
+.price-subtitle {
+    color: var(--text-muted);
+    margin-bottom: 24px;
+}
+
+.price-card ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 24px;
+    text-align: left;
+}
+
+.price-card li {
+    padding: 8px 0;
+    padding-left: 24px;
+    position: relative;
+    color: var(--text-secondary);
+}
+
+.price-card li::before {
+    content: ">";
+    position: absolute;
+    left: 0;
+    color: var(--accent-green);
+}
+
+.price-note {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    font-style: italic;
+}
+
+/* =============================================================================
+   FINAL CTA
+   ============================================================================= */
+
+.final-cta {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 100px 32px;
+}
+
+.final-cta h2 {
+    margin-bottom: 32px;
+}
+
+.final-cta p {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+.final-question {
+    font-size: 1.5rem;
+    color: var(--text-primary);
+    font-weight: 600;
+    margin-bottom: 32px;
+}
+
+.cta-buttons {
+    margin-top: 40px;
+}
+
+.cta-subtext {
+    margin-top: 16px;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+/* =============================================================================
+   FOOTER
+   ============================================================================= */
+
+.landing-footer {
+    text-align: center;
+    padding: 40px 32px;
+    border-top: 1px solid var(--border-color);
+    color: var(--text-muted);
+}
+
+.footer-small {
+    font-size: 0.8rem;
+    margin-top: 12px;
+    font-style: italic;
+}
+
+/* =============================================================================
+   RESPONSIVE
+   ============================================================================= */
+
+@media (max-width: 768px) {
+    .hero-headline {
+        font-size: 2rem;
+    }
+
+    .hero-subtext {
+        font-size: 1rem;
+    }
+
+    section {
+        padding: 60px 20px;
+    }
+
+    section h2 {
+        font-size: 1.5rem;
+    }
+
+    .pipeline-arrow {
+        display: none;
+    }
+
+    .pipeline-steps {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .pipeline-step {
+        max-width: 100%;
+    }
+
+    .isus-stats {
+        flex-direction: column;
+        gap: 24px;
+    }
+
+    .isus-card {
+        padding: 32px 24px;
+    }
+
+    .price-card.featured {
+        transform: none;
+    }
+
+    .landing-nav {
+        padding: 20px;
+    }
+
+    .hero {
+        padding: 0 20px;
+    }
+}
